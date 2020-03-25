@@ -1,0 +1,433 @@
+<!-- 圣杯布局 -->
+<style>
+.container {
+    padding: 0 300px 0 200px;
+}
+.content {
+    float: left;
+    width: 100%;
+    background: #f00;
+}
+.left {
+    position: relative;
+    left: -200px;
+    float: left;
+    width: 200px;
+    margin-left: -100%;
+    background: #0f0;
+}
+.right {
+    position: relative;
+    right: -300px;
+    float: left;
+    width: 300px;
+    margin-left: -300px;
+    background: #00f;
+}
+</style>
+
+<div class="container">
+    <div class="content">中间内容区域</div>
+    <div class="left">左侧边栏区域</div>
+    <div class="right">右侧边栏区域</div>
+</div>
+
+<!-- 双飞翼布局 -->
+<style>
+.container {
+    float: left;
+    width: 100%;
+    background: #f00;
+}
+.content {
+    margin-left: 200px;
+    margin-right: 300px;
+}
+.left {
+    float: left;
+    width: 200px;
+    margin-left: -100%;
+    background: #0f0;
+}
+.right {
+    float: left;
+    width: 300px;
+    margin-left: -300px;
+    background: #00f;
+}
+</style>
+
+<div class="container">
+    <div class="content">中间内容区域</div>
+</div>
+<div class="left">左侧边栏区域</div>
+<div class="right">右侧边栏区域</div>
+
+<!-- 三栏布局——浮动 -->
+<style>
+.left {
+    float: left;
+    width: 100px;
+    background-color: #f00;
+}
+.right {
+    float: right;
+    width: 200px;
+    background-color: #00f;
+}
+.main {
+    overflow: hidden;
+    background-color: #0f0;
+}
+</style>
+
+<div class="container">
+    <div class="left">左侧栏</div>
+    <div class="right">右侧栏</div>
+    <div class="main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates molestias consequatur facere aperiam distinctio debitis in voluptatum quas blanditiis culpa illo minus accusantium atque quaerat unde, architecto odit! Itaque, eos.</div>
+</div>
+
+<!-- 三栏布局-flex -->
+<style>
+.container {
+    display: flex;
+}
+.left {
+    flex: 0 0 100px;
+    background-color: #f00;
+}
+.main {
+    flex: 1;
+    background-color: #0f0;
+}
+.right {
+    flex: 0 0 200px;
+    background-color: #00f;
+}
+</style>
+
+<div class="container">
+    <div class="left">左侧栏</div>
+    <div class="main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae dolores maxime ullam laudantium ex modi sapiente, iure reprehenderit non error, maiores quas provident? Quibusdam voluptas laudantium eius, repudiandae rerum asperiores?</div>
+    <div class="right">右侧栏</div>
+</div>
+
+<!-- 三栏布局-表格 -->
+<style>
+.container {
+    display: table;
+}
+.left {
+    display: table-cell;
+    width: 100px;
+    background-color: #f00;
+}
+.right {
+    display: table-cell;
+    width: 200px;
+    background-color: #00f;
+}
+.main {
+    display: table-cell;
+    background-color: #0f0;
+}
+</style>
+
+<div class="container">
+    <div class="left">左侧栏</div>
+    <div class="main">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo hic animi veniam enim libero iure beatae modi molestias aliquid eaque ullam, nihil iste velit ex sed assumenda temporibus, tempora consectetur.</div>
+    <div class="right">右侧栏</div>
+</div>
+
+<!-- 三栏布局-网格 -->
+<style>
+.container {
+    display: grid;
+    grid-template-columns: 100px auto 200px;
+}
+.left {
+    background-color: #f00;
+}
+.right {
+    background-color: #00f;
+}
+.main {
+    background-color: #0f0;
+}
+</style>
+
+<div class="container">
+    <div class="left">左侧栏</div>
+    <div class="main">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis corporis, neque odio at, saepe unde officiis nesciunt deleniti quidem delectus necessitatibus reiciendis nulla. Praesentium voluptates, perspiciatis natus fuga dicta tempora!</div>
+    <div class="right">右侧栏</div>
+</div>
+
+
+
+<!-- 清除浮动-使用带clear属性的空元素 -->
+<style>
+.news {
+  background-color: gray;
+  border: solid 1px black;
+  }
+
+.news img {
+  float: left;
+  }
+
+.news p {
+  float: right;
+  }
+
+.clear {
+  clear: both;
+  }
+</style>
+
+<div class="news">
+    <img src="news-pic.jpg" />
+    <p>some text</p>
+    <div class="clear"></div>
+</div>
+
+<!-- 清除浮动-overflow -->
+<style>
+.news {
+  background-color: gray;
+  border: solid 1px black;
+  overflow: hidden;
+  *zoom: 1;
+  }
+
+.news img {
+  float: left;
+  }
+
+.news p {
+  float: right;
+  }
+</style>
+
+<div class="news">
+    <img src="news-pic.jpg" />
+    <p>some text</p>
+</div>
+
+<!-- 清除浮动-after伪元素 -->
+<style>
+.news {
+  background-color: gray;
+  border: solid 1px black;
+  }
+
+.news img {
+  float: left;
+  }
+
+.news p {
+  float: right;
+  }
+
+.clearfix:after{
+  content: "020"; 
+  display: block; 
+  height: 0; 
+  clear: both; 
+  visibility: hidden;  
+  }
+
+.clearfix {
+  /* 触发 hasLayout */ 
+  zoom: 1; 
+  }
+</style>
+
+<div class="news clearfix">
+    <img src="news-pic.jpg" />
+    <p>some text</p>
+</div>
+
+
+
+<!-- 垂直居中-margin:auto -->
+<style>
+ .father{
+     width:400px; 
+     height:200px; 
+     position:relative; 
+     border:1px solid #000;
+ }
+ .son{
+     width:200px; 
+     height:100px; 
+     background:red; 
+     position:absolute; 
+     left:0; 
+     top:0; 
+     bottom:0; 
+     right:0; 
+     margin:auto;
+ }
+
+</style>
+
+<div class="father">
+    <div class="son">
+        position:absolute;</br> left:0; top:0;</br> right:0; bottom:0; </br>margin:auto
+    </div>
+</div>
+
+<!-- 垂直居中-translate -->
+<style>
+.father{
+    width:400px;
+    height:200px; 
+    border:1px solid #000;
+    position:relative;
+}
+ 
+.son{
+    width:200px; 
+    height:100px; 
+    background:red;
+    position:absolute; 
+    left:50%; 
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+</style>
+
+<div class="father">
+    <div class="son">
+        position:absolute;</br>left:50%;top:50%;</br>transform
+    </div>
+</div>
+
+<!-- 垂直居中-table -->
+<style>
+.father{
+    width:400px; 
+    height:200px; 
+    border:1px solid #000;
+    display:table-cell; 
+    text-align:center;
+    vertical-align:middle;
+}
+.son{
+    width:200px; 
+    height:100px; 
+    background:red;
+    display:inline-block;
+}
+</style>
+
+<div class="father">
+    <div class="son">
+       display:table-cell;</br>text-align:center;</br> vertical-align:middle
+    </div>
+</div>
+
+<!-- 垂直居中-flex -->
+<style>
+.father{
+    width:400px; 
+    height:200px; 
+    border:1px solid #000;
+    display:flex; 
+    align-items:center;
+    justify-content:center;
+}
+.son{
+    width:200px; 
+    height:100px; 
+    background:red;
+}
+</style>
+
+<div class="father">
+    <div class="son">
+        display:flex;</br>align-items:center;</br> justify-content:center;
+    </div>
+</div>
+
+<!-- React-父组件向子组件传值 -->
+// 父组件
+var MyContainer = React.createClass({
+  render: function() {
+    return (
+      <Intermediate text="where is my son?" />
+    );
+  }
+});
+
+// 子组件1：中间嵌套的组件
+var Intermediate = React.createClass({
+  render: function () {
+    return (
+      <Child text={this.props.text} />
+    );
+  }
+});
+
+// 子组件2：子组件1的子组件
+var Child = React.createClass({
+  render: function () {
+    return (
+      <span>{this.props.text}</span>
+    );
+  }
+});
+
+<!-- React-子组件向父组件传值 -->
+// 父组件
+var MyContainer = React.createClass({
+  getInitialState: function () {
+    return {
+      checked: false
+    };
+  },
+  onChildChanged: function (newState) {
+    this.setState({
+      checked: newState
+    });
+  },
+  render: function() {
+    var isChecked = this.state.checked ? 'yes' : 'no';
+    return (
+      <div>
+        <div>Are you checked: {isChecked}</div>
+        <ToggleButton text="Toggle me"
+          initialChecked={this.state.checked}
+          callbackParent={this.onChildChanged}
+          />
+      </div>
+    );
+  }
+});
+
+// 子组件
+var ToggleButton = rReact.createClass({
+  getInitialState: function () {
+    return {
+      checked: this.props.initialChecked
+    };
+  },
+  onTextChange: function () {
+    var newState = !this.state.checked;
+    this.setState({
+      checked: newState
+    });
+    // 这里要注意：setState 是一个异步方法，所以需要操作缓存的当前值
+    this.props.callbackParent(newState);
+  },
+  render: function () {
+    // 从【父组件】获取的值
+    var text = this.props.text;
+    // 组件自身的状态数据
+    var checked = this.state.checked;
+
+    return (
+        <label>{text}: <input type="checkbox" checked={checked}                 onChange={this.onTextChange} /></label>
+    );
+  }
+});
